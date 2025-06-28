@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+</head>
+<body>
+  <header id="home">
+    <nav class="navbar">
+      <div class="logo">MyPortfolio</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="toggle-switch" id="theme-toggle" title="Toggle dark/light mode">
+        <span class="toggle-icon">🌙</span>
+      </div>
+      <div class="menu-toggle" id="mobile-menu">
+        <span></span><span></span><span></span>
+      </div>
+    </nav>
+    <section class="landing">
+      <div class="landing-content">
+        <div class="profile-pic-wrapper" data-aos="zoom-in">
+          <img src="{{ url_for('static', filename='img/shubham portfolio photo.jpg') }}" alt="Profile Picture" class="profile-pic-glow">
+        </div>
+        <div class="intro-text" data-aos="fade-up">
+          <h1>Shubham Saini</h1>
+          <h2>DevOps Engineer in Progress | Intermediate ML Developer</h2>
+          <p>DevOps enthusiast with a passion for automation and a growing edge in machine learning</p>
+          <a href="#projects" class="cta-btn">View My Work</a>
+        </div>
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <section id="projects" class="projects-section">
+      <h2 data-aos="fade-up">Projects</h2>
+      <div class="projects-grid">
+        <!-- Project cards will go here -->
+        <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+          <h3>Project Title 1</h3>
+          <p>Short project description goes here.</p>
+          <a href="#" class="project-link" target="_blank">Live Demo</a>
+          <a href="#" class="project-link" target="_blank">GitHub</a>
+        </div>
+        <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+          <h3>Project Title 2</h3>
+          <p>Short project description goes here.</p>
+          <a href="#" class="project-link" target="_blank">Live Demo</a>
+          <a href="#" class="project-link" target="_blank">GitHub</a>
+        </div>
+        <!-- Add more project cards as needed -->
+      </div>
+    </section>
+
+    <section id="about" class="about-section">
+      <h2 data-aos="fade-up">About Me</h2>
+      <div class="about-content">
+        <img src="{{ url_for('static', filename='img/shubham portfolio photo.jpg') }}" alt="Profile Picture" class="profile-pic" data-aos="zoom-in">
+        <div class="bio" data-aos="fade-left">
+          <p>Hi, I'm Shubham Saini — a tech enthusiast with a passion for building, automating, and scaling systems. I'm deeply interested in DevOps, where I enjoy streamlining development workflows, managing infrastructure, and ensuring smooth deployments through tools like Docker, Kubernetes, and CI/CD pipelines.
+
+            Alongside DevOps, I have an intermediate-level understanding of Machine Learning, and I enjoy experimenting with models, data preprocessing, and building intelligent systems that can learn and improve over time.
+            
+            I love learning new technologies, solving real-world problems, and continuously improving my skills. Whether it's writing clean code, working with cloud environments, or deploying ML models, I'm always excited to dive deeper and take on new challenges.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="skills-section">
+      <h2 data-aos="fade-up">Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
+          <span>HTML5</span>
+        </div>
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="200">
+          <span>CSS3</span>
+        </div>
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="300">
+          <span>JavaScript</span>
+        </div>
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="400">
+          <span>Java</span>
+        </div>
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="500">
+          <span>RedHat Linux</span>
+        </div>
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="600">
+          <span>Networking</span>
+        </div>
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="700">
+          <span>AI/ML</span>
+        </div>
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="800">
+          <span>Content Creation</span>
+        </div>
+        <!-- Add more skills as needed -->
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+      <h2 data-aos="fade-up">Contact</h2>
+      <form class="contact-form" autocomplete="off" data-aos="fade-up" method="POST" action="/submit">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Shubham Saini. All rights reserved.</p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html> 
