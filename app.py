@@ -4,12 +4,15 @@ from pymongo.server_api import ServerApi
 from dotenv import load_dotenv
 import os
 
-load_dotenv()  # Load environment variables from .env
+load_dotenv()
 
-# Now get the URI
+
 uri = os.getenv("MONGO_URI")
 
-# Create a new client and connect to the server
+if not uri:
+    raise Exception("MONGO_URI not found in .env")
+
+
 client = MongoClient(uri, server_api=ServerApi('1'))
 db = client['portfolio']
 messages = db['messages']
