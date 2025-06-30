@@ -275,19 +275,33 @@ body.dark .bio {
   justify-items: center;
 }
 .skill-card {
-  background: #fff;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  padding: 1.2rem 1rem 1rem 1rem;
+  background: linear-gradient(135deg, #3ac4bd, #1fa2ff);
+  border-radius: 1rem;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  padding: 1.5rem 1.2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: transform 0.3s, box-shadow 0.3s;
-  min-width: 120px;
-  min-height: 140px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-width: 140px;
+  min-height: 160px;
   position: relative;
   overflow: hidden;
+  color: white;
+  text-align: center;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
+
+.skill-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25), 0 0 20px rgba(58, 196, 189, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  background: linear-gradient(135deg, #3ac4bd, #1fa2ff);
+}
+
+
 body.dark .skill-card {
   background: #232526;
   color: #fff;
@@ -309,10 +323,7 @@ body.dark .skill-card {
 .skill-card:hover img {
   transform: scale(1.15) rotate(-6deg);
 }
-.skill-card:hover {
-  transform: translateY(-8px) scale(1.04);
-  box-shadow: 0 8px 32px #2575fc33;
-}
+
 
 .contact-form {
   max-width: 420px;
